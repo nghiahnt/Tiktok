@@ -11,6 +11,8 @@
     --black: #000;
     --text-color: #161823;
     --white: #fff;
+
+    --font-family: 'ProximaNova', sans-serif;
 }
 
 * {
@@ -24,12 +26,43 @@ html {
 }
 
 body {
-    font-family: 'ProximaNova', sans-serif;
+    font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
-    color: var(--text-color)
+    color: var(--text-color);
+    overflow-y: overlay;
+}
 
+//Scrollbar CSS
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration, .paper-button, .ytp-progress-bar-container, a:-webkit-any-link, input[type="radio"], input[type=submit], :link, :visited, a *, button, button *, [role="button"], [role="button"] *, [role="link"], [role="link"] *, ::-webkit-scrollbar-button, ::-webkit-file-upload-button, button, .ytp-volume-panel, .link {
+    cursor: url(data:image/png;base64,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) 13 0, auto !important;
+}
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(22, 24, 35, .06);
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(22, 24, 35, .06);
+}
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 button, input, [tabindex] {
